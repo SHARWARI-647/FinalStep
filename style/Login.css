@@ -1,0 +1,123 @@
+ /* ================================
+           Reset & Body
+        ================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url('https://wallpapers.com/images/hd/light-color-background-u5ajon1xr9puabyq.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* ================================
+           Login Form Container
+        ================================= */
+        .login-container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            font-size: 28px;
+            color: rgb(48, 5, 89);
+            margin-bottom: 10px;
+        }
+
+        .login-container h3 {
+            font-size: 18px;
+            color: rgba(62, 8, 117, 1);
+            margin-bottom: 30px;
+        }
+
+        /* ================================
+           Error Message
+        ================================= */
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* ================================
+           Form Inputs
+        ================================= */
+        .login-container input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .login-container input:focus {
+            border-color: rgb(175, 131, 212);
+            box-shadow: 0 0 8px rgba(53, 8, 89, 0.4);
+        }
+
+        /* ================================
+           Login Button
+        ================================= */
+        button[name="login"] {
+            background-color: rgba(75, 23, 121, 1);
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        button[name="login"]:hover {
+            background-color: rgba(31, 4, 66, 1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ================================
+           Link & Notes
+        ================================= */
+        .login-container p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-container a {
+            color: rgb(75, 23, 121);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .login-container a:hover {
+            color: rgba(31, 4, 66, 1);
+        }
+
+        /* ================================
+           Responsive
+        ================================= */
+        @media (max-width: 450px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+        }

@@ -16,9 +16,21 @@ if (isset($_POST['logout'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Logout</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        button {
+            width: 220px;
+            background: red;
+            color: white;
+            font-size: 18px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body class="text-center" style="background:#f5f9ff;">
+<body>
 
 <div class="container mt-5">
     <h2 class="text-primary mb-4">Student Dashboard</h2>

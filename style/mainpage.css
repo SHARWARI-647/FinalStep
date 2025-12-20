@@ -1,0 +1,152 @@
+/* ================================
+   Reset & Body
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.container {
+    min-height: 100vh;
+background-image: url('https://www.bing.com/images/search?view=detailV2&ccid=x%2fO2B2dG&id=861C1841B97B7DCAF8187561DA81BA2AAE0ED8A0&thid=OIP.x_O2B2dGjy3w3xu9jmk5LQHaEK&mediaurl=https%3a%2f%2fwallpapers.com%2fimages%2fhd%2flight-color-background-a4qjkri1vw8hzoyn.jpg&exph=768&expw=1366&q=bg+image+light+color&FORM=IRPRST&ck=283BE9700751658CAB50A4796286EBE4&selectedIndex=1&itb=0');
+  background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+    color: #2c3e50;
+}
+
+/* ================================
+   Heading & Divider
+================================= */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+#line {
+    height: 3px;
+    width: 100%;
+    max-width: 700px;
+    background-color: rgba(255,255,255,0.6);
+    margin: 20px 0;
+    border: none;
+    border-radius: 2px;
+}
+
+/* ================================
+   Navigation Tabs
+================================= */
+#tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,0.25);
+    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+}
+
+#tabs a {
+    background-color: rgba(255,255,255,0.4);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#tabs a:hover {
+    background-color: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   Registration Cards
+================================= */
+.nav-tab {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.nav-tab h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+.nav-item {
+    background-color: rgba(255,255,255,0.25); /* glass effect */
+    border-radius: 15px;
+    padding: 25px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #2c3e50;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nav-item a {
+    color: #2c3e50;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-item:hover {
+    background-color: rgba(255,255,255,0.6);
+    color: #2c3e50;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.nav-item:hover a {
+    color: #2c3e50;
+}
+
+/* ================================
+   Icons inside cards
+================================= */
+.nav-item i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #3498db;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover i {
+    transform: scale(1.2);
+    color: #2c3e50;
+}
+
+/* ================================
+   Responsive
+================================= */
+@media (max-width: 650px) {
+    #tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-tab {
+        grid-template-columns: 1fr;
+    }
+}

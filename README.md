@@ -1,0 +1,182 @@
+# FinalStep – Student Clearance Management System
+
+FinalStep is a **web-based Student Clearance Management System** developed using **PHP and MySQL**.  
+It digitizes the traditional student clearance process and includes **OTP-based Email Verification** for secure authentication.
+
+---
+
+## 📌 Project Overview
+
+In many colleges, the clearance process is manual, time-consuming, and paper-based.  
+**FinalStep** provides a centralized, secure, and automated platform where students can apply for clearance online and departments can approve it digitally.
+
+---
+
+## 🔐 Key Feature: OTP Email Verification
+
+The system uses **OTP (One-Time Password) Email Verification** during registration to ensure security.
+
+### OTP Workflow:
+1. User enters email during registration
+2. System generates a 6-digit OTP
+3. OTP is sent to the user's email using **PHPMailer**
+4. User verifies OTP
+5. Registration is completed only after successful verification
+
+This prevents fake accounts and ensures valid user access.
+
+---
+
+## 👥 User Roles
+
+### 👨‍🎓 Student
+- Register with OTP email verification
+- Login securely
+- Apply for clearance
+- Track clearance status
+- Download Clearance Certificate / TC (PDF)
+
+### 👨‍💼 Admin
+- Monitor entire system
+- View all students
+- Final clearance approval
+- Generate certificates
+
+### 🏫 Department
+- Verify departmental clearance
+- Approve or reject requests
+
+### 📚 Library
+- Check library dues
+- Approve clearance
+
+### 🏪 Store
+- Verify equipment returns
+- Approve clearance
+
+---
+
+## 🚀 Features
+
+- Secure Registration & Login
+- OTP-based Email Verification
+- Role-based Dashboards
+- Online Clearance Application
+- Department-wise Approval
+- PDF Generation (Clearance Certificate & TC)
+- Session-based Authentication
+- Clean & User-Friendly UI
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+
+### Backend
+- PHP
+
+### Database
+- MySQL
+
+### Tools & Libraries
+- XAMPP (Apache & MySQL)
+- PHPMailer (OTP Email)
+- FPDF (PDF Generation)
+- Git & GitHub (Version Control)
+- VS Code
+
+---
+
+## 📂 Project Structure
+
+```
+
+FinalStep/
+│
+├── admin/
+├── department/
+├── library/
+├── store/
+├── student/
+├── uploads/        # ignored using .gitignore
+├── style/
+├── db.php
+├── index.php
+├── README.md
+└── .gitignore
+
+````
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Install **XAMPP**
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/SHARWARI-647/FinalStep.git
+````
+
+3. Move project to:
+
+   ```
+   C:\xampp\htdocs\
+   ```
+4. Start **Apache** and **MySQL**
+5. Import database into **phpMyAdmin**
+6. Configure database in `db.php`
+7. Open browser:
+
+   ```
+   http://localhost/FinalStep
+   ```
+
+---
+
+## 🔒 Security Features
+
+* OTP Email Verification
+* Session-based login
+* Role-based access control
+* Restricted unauthorized access
+
+---
+
+## 📈 Future Enhancements
+
+* Password hashing (bcrypt)
+* SMS OTP verification
+* Mobile responsive UI
+* Email notifications
+* Analytics dashboard
+* REST API integration
+
+---
+
+## 👩‍💻 Developed By
+
+**Sharwari Rahandale**
+Student | Web Developer
+
+---
+
+## 📄 License
+
+This project is developed for **educational purposes only**.
+
+````
+
+---
+
+## ✅ Final Git Commands
+
+```bash
+git add README.md
+git commit -m "Added complete project README"
+git push
+````
+

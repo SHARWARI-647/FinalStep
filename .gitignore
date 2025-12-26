@@ -1,0 +1,17 @@
+# XAMPP / PHP
+/uploads/
+/cache/
+/tmp/
+
+# PDFs & generated files
+*.pdf
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/

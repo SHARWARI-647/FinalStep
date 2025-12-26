@@ -31,12 +31,12 @@ if (isset($_POST['update_status_row'])) {
     exit();
 }
 
-// ✅ Fetch Data from admin_clearance
+// ✅ Fetch Data
 $query = "SELECT * FROM admin_clearance";
 $result = mysqli_query($conn, $query);
 
 if (!$result) {
-    die("<p style='color:red; text-align:center;'>Database query failed: " . mysqli_error($conn) . "</p>");
+    die("Database error: " . mysqli_error($conn));
 }
 ?>
 
@@ -44,128 +44,109 @@ if (!$result) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Clearance Dashboard</title>
-<link href="style/Dashboard.css" rel="stylesheet">
-<style>
-/* Same CSS as before, but simplified for readability */
 
-
-h2 {
-  text-align: center;
-  color: #300559;
-  margin-bottom: 20px;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-table thead {
-  background-color: #300559;
-  color: white;
-}
-table th, table td {
-  padding: 10px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-table tr:hover {
-  background: #eee;
-}
-.btn {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-size: 14px;
-}
-.btn-success { background-color: #28a745; }
-.btn-danger { background-color: #dc3545; }
-.btn-primary { background-color: #007bff; }
-.btn-success:hover { background-color: #218838; }
-.btn-danger:hover { background-color: #c82333; }
-.btn-primary:hover { background-color: #0056b3; }
-</style>
+<!-- ✅ YOUR CSS -->
+<link rel="stylesheet" href="style/Dashboard.css">
 </head>
+
 <body>
 
 <div class="container">
-  <h2>🏛 Admin Clearance Dashboard</h2>
+    <div class="card">
+        <div class="card-body">
 
-  <div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th>Enrollment</th>
-          <th>Name</th>
-          <th>Year</th>
-          <th>Branch</th>
-          <th>Dept Status</th>
-          <th>Store Status</th>
-          <th>Library Status</th>
-          <th>Library Receipt</th>
-          <th>Store Receipt</th>
-          <th>Clearance PDF</th>
-          <th>Final Status</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php if (mysqli_num_rows($result) > 0): ?>
-          <?php while ($row = mysqli_fetch_assoc($result)): ?>
-            <tr>
-              <td><?= htmlspecialchars($row['Enrollnment']) ?></td>
-              <td><?= htmlspecialchars($row['Name']) ?></td>
-              <td><?= htmlspecialchars($row['Year']) ?></td>
-              <td><?= htmlspecialchars($row['Branch']) ?></td>
-              <td><?= htmlspecialchars($row['dept_st']) ?></td>
-              <td><?= htmlspecialchars($row['store_st']) ?></td>
-              <td><?= htmlspecialchars($row['lib_st']) ?></td>
+            <h2 class="card-title">🏛 Admin Clearance Dashboard</h2>
 
-              <td>
-                <?php if (!empty($row['Payment_Receipt_Library'])): ?>
-                  <a href="uploads/receipts/<?= urlencode($row['Payment_Receipt_Library']) ?>" target="_blank" class="btn btn-primary">View</a>
+            <table class="table-data">
+                <thead>
+                    <tr>
+                        <th>Enrollment</th>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Branch</th>
+                        <th>Dept</th>
+                        <th>Store</th>
+                        <th>Library</th>
+                        <th>Lib Receipt</th>
+                        <th>Store Receipt</th>
+                        <th>Clearance PDF</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                <?php if (mysqli_num_rows($result) > 0): ?>
+                    <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                    <tr>
+                        <td data-label="Enrollment"><?= htmlspecialchars($row['Enrollnment']) ?></td>
+                        <td data-label="Name"><?= htmlspecialchars($row['Name']) ?></td>
+                        <td data-label="Year"><?= htmlspecialchars($row['Year']) ?></td>
+                        <td data-label="Branch"><?= htmlspecialchars($row['Branch']) ?></td>
+                        <td data-label="Dept"><?= htmlspecialchars($row['dept_st']) ?></td>
+                        <td data-label="Store"><?= htmlspecialchars($row['store_st']) ?></td>
+                        <td data-label="Library"><?= htmlspecialchars($row['lib_st']) ?></td>
+
+                        <td data-label="Library Receipt">
+                            <?php if ($row['Payment_Receipt_Library']): ?>
+                                <a class="btn btn-primary"
+                                   target="_blank"
+                                   href="uploads/receipts/<?= urlencode($row['Payment_Receipt_Library']) ?>">
+                                   View
+                                </a>
+                            <?php else: ?>
+                                —
+                            <?php endif; ?>
+                        </td>
+
+                        <td data-label="Store Receipt">
+                            <?php if ($row['Payment_Receipt_Store']): ?>
+                                <a class="btn btn-primary"
+                                   target="_blank"
+                                   href="uploads/receipts/<?= urlencode($row['Payment_Receipt_Store']) ?>">
+                                   View
+                                </a>
+                            <?php else: ?>
+                                —
+                            <?php endif; ?>
+                        </td>
+
+                        <td data-label="Clearance PDF">
+                            <?php if ($row['Clearance_PDF']): ?>
+                                <a class="btn btn-success"
+                                   target="_blank"
+                                   href="uploads/clearance_pdfs/<?= urlencode($row['Clearance_PDF']) ?>">
+                                   View
+                                </a>
+                            <?php else: ?>
+                                Not Generated
+                            <?php endif; ?>
+                        </td>
+
+                        <td data-label="Status"><?= htmlspecialchars($row['Status']) ?></td>
+
+                        <td data-label="Action">
+                            <form method="post">
+                                <input type="hidden" name="Id" value="<?= $row['Id'] ?>">
+                                <input type="hidden" name="en" value="<?= $row['Enrollnment'] ?>">
+                                <button name="update_status_row" value="Approved" class="btn-success">Approve</button>
+                                <button name="update_status_row" value="Rejected" class="btn-danger">Reject</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
                 <?php else: ?>
-                  <span style="color: #888;">None</span>
+                    <tr>
+                        <td colspan="12" style="text-align:center;">No records found</td>
+                    </tr>
                 <?php endif; ?>
-              </td>
+                </tbody>
+            </table>
 
-              <td>
-                <?php if (!empty($row['Payment_Receipt_Store'])): ?>
-                  <a href="uploads/receipts/<?= urlencode($row['Payment_Receipt_Store']) ?>" target="_blank" class="btn btn-primary">View</a>
-                <?php else: ?>
-                  <span style="color: #888;">None</span>
-                <?php endif; ?>
-              </td>
-
-           <td>
-  <?php if (!empty($row['Clearance_PDF'])): ?>
-    <a href="uploads/clearance_pdfs/<?= urlencode($row['Clearance_PDF']) ?>" target="_blank" class="btn btn-success">View</a>
-  <?php else: ?>
-    <span style="color: #888;">Not Generated</span>
-  <?php endif; ?>
-</td>
-
-
-              <td><?= htmlspecialchars($row['Status']) ?></td>
-
-              <td>
-                <form method="post">
-                  <input type="hidden" name="Id" value="<?= $row['Id'] ?>">
-                  <input type="hidden" name="en" value="<?= htmlspecialchars($row['Enrollnment']) ?>">
-                  <button type="submit" name="update_status_row" value="Approved" class="btn btn-success">Approve</button>
-                  <button type="submit" name="update_status_row" value="Rejected" class="btn btn-danger">Reject</button>
-                </form>
-              </td>
-            </tr>
-          <?php endwhile; ?>
-        <?php else: ?>
-          <tr><td colspan="12" style="text-align:center; color:#666;">No clearance requests found.</td></tr>
-        <?php endif; ?>
-      </tbody>
-    </table>
-  </div>
+        </div>
+    </div>
 </div>
 
 </body>

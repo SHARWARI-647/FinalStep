@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+include 'storehead.php';
 
 if (isset($_POST['register'])) {
     $name = $_POST['name'];
@@ -35,6 +36,7 @@ if (isset($_POST['register'])) {
             <input type="text" name="contact" placeholder="Contact No." required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
             <button type="submit" name="register" id="register">Register</button>
+            <p>Don't have an account? <a href="store_login.php">Login here</a></p>
         </form>
     </div>
 </body>

@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+include 'adminhead.php';
 
 if (isset($_POST['register'])) {
 
@@ -44,6 +45,7 @@ if (isset($_POST['register'])) {
             <input type="text" name="contact" placeholder="Contact No." required><br>
             <input type="password" name="password" placeholder="Password" required><br>
             <button type="submit" name="register" id="register">Register</button>
+            <p>Don't have an account? <a href="admin_login.php">Login here</a></p>
         </form>
     </div>
 </body>

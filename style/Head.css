@@ -1,130 +1,64 @@
-/* ================================
-   Reset & Global Styles
-================================ */
+/* BACKGROUND IMAGE */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    min-height: 100vh;
-    background-image: url('https://wallpapers.com/images/hd/light-color-background-u5ajon1xr9puabyq.jpg');
-    background-size: cover;
-    background-position: center;
+/* HEADER */
+header {
+    background-color: #03152b;
+    color: #f9f6ff;
+    padding: 12px 40px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 40px 20px;
-}
-
-/* ================================
-   Header Texts
-================================ */
-h1 {
-    font-size: 38px;
-    color: rgb(48, 5, 89);
-    margin-bottom: 5px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
-    font-weight: 700;
-}
-
-h3 {
-    font-size: 20px;
-    color: rgba(62, 8, 117, 1);
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-#line {
+    position: fixed;
     width: 100%;
-    height: 2px;
-    background-color: rgba(75, 23, 121, 0.4);
-    border: none;
-    margin: 15px 0 25px;
-    border-radius: 3px;
+    top: 0;
+    z-index: 1000;
 }
 
-/* ================================
-   Navigation Table
-================================ */
-#tabs {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    padding: 25px 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    border-collapse: separate;
-    border-spacing: 20px 10px;
-    transition: box-shadow 0.3s ease;
+/* TITLE */
+header h1 {
+    font-family: Cambria, Georgia, "Times New Roman", serif;
+    font-size: 22px;
 }
 
-#tabs:hover {
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+header span {
+    font-size: 13px;
+    color: #cbd5e1;
 }
 
-/* Table Cells */
-#tabs td {
-    padding: 10px 15px;
+/* NAVBAR */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-/* Links inside table */
-#tabs a {
+nav ul li a {
     text-decoration: none;
-    font-size: 16px;
-    color: rgb(48, 5, 89);
-    font-weight: 600;
-    background-color: rgba(175, 131, 212, 0.15);
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: inline-block;
-    transition: all 0.25s ease;
+    color: #e5e7eb;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-/* Hover effect */
-#tabs a:hover {
-    background-color: rgba(75, 23, 121, 1);
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transform: translateY(-2px);
+nav ul li a:hover {
+    background-color: #374151;
+    color: #ffffff;
 }
 
-/* ================================
-   Responsive Design
-================================ */
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
+/* LOGOUT */
+nav ul li a.logout {
+    background-color: #dc2626;
+    color: #ffffff;
+}
 
-    #tabs {
-        width: 100%;
-        padding: 20px;
-    }
-
-    #tabs tr {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #tabs td {
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    #tabs a {
-        width: 80%;
-        text-align: center;
-        font-size: 15px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
+nav ul li a.logout:hover {
+    background-color: #b91c1c;
 }

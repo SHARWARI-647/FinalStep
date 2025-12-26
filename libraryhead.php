@@ -1,25 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Library Panel - Student Clearance System</title>
-    <link href="style\Head.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Student Clearance System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/Head.css">
 </head>
-<body class="container">
 
+<body><header>
+  <div>
     <h1>Student Clearance System</h1>
-    <h3>Library Section</h3>
-    <hr id="line">
+    <span>Library Portal</span>
+  </div>
 
-    <table id="tabs" cellspacing="10" cellpadding="5">
-        <tr>
-            <td id="data"><a href="mainPage.php">🏠 Home</a></td>
-            <td id="data"><a href="library_dashboard.php">📚 Library Dashboard</a></td>
-            <td id="data"><a href="lib_material.php">➕ Add Material</a></td>
-            <td id="data"><a href="library_detail.php">👤 View Profile</a></td>
-            <td id="data"><a href="library_logout.php">🚪 Logout</a></td>
-        </tr>
-    </table>
-
-    <hr id="line">
+  <nav>
+    <ul>
+      <li><a href="login_mainPage.php">🏠 Home</a></li>
+      <li><a href="library_dashboard.php">📚 Library Dashboard</a></li>
+      <li><a href="lib_material.php">➕ Add Material</a></li>
+      <li><a href="library_detail.php">👤View Profile</a></li>
+      <li><a href="logout.php">🚪Logout</a></li>
+    </ul>
+  </nav>
+</header>
 
 </body>
 </html>

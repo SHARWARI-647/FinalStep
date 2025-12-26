@@ -5,7 +5,7 @@ include 'stdhead.php';
 
 // Redirect if not logged in
 if (!isset($_SESSION['enrollment'])) {
-    header("Location: Std_login.php");
+    header("Location: std_login.php");
     exit();
 }
 
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_receipt'])) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Student Dashboard</title>
-<link href="style\Dashboard.css" rel="stylesheet">
+<link href="style\std_dashboard.css" rel="stylesheet">
 </head>
 
 <body>

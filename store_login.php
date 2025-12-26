@@ -32,7 +32,7 @@ if (isset($_POST['login'])) {
     <form method="post">  
         <input type="text" placeholder="Name" name="nm" required><br><br>
         <input type="password" placeholder="Password" name="password" required><br><br> 
-        <input type="submit" value="Login" name="login" id="login"><br><br> 
+        <Button type="submit" value="Login" name="login" id="login">Login</Button><br><br> 
          <p>Don't have an account? <a href="store_register.php">Register here</a></p>
     </form>
 </div>

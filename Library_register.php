@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+include 'libraryhead.php';
 $message = ""; // To display success/error messages
 
 if (isset($_POST['register'])) {

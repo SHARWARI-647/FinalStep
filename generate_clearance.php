@@ -41,15 +41,13 @@ if (
     exit();
 }
 
-// ✅ Directory setup
 $uploadDir = "uploads/clearance_pdfs/";
 if (!file_exists($uploadDir)) {
     mkdir($uploadDir, 0777, true);
 }
 
-// ✅ File name
 $pdf_filename = "Clearance_Certificate_" . $student_data['Enrollnment'] . ".pdf";
-$pdf_path = $uploadDir . $pdf_filename;
+$pdf_path     = $uploadDir . $pdf_filename;
 
 // ✅ Generate and Save PDF
 $pdf = new FPDF('P', 'mm', 'A4');
@@ -116,22 +114,25 @@ $pdf->Ln(7);
 $pdf->Image('style/image.png', 15, 215, 7);
 $pdf->Cell(0, 8, 'Store In-Charge', 0, 1, 'L');
 
-
-// ✅ Save the PDF file
+/* ---------- Save PDF ---------- */
 $pdf->Output('F', $pdf_path);
 
-// ✅ Update the admin_clearance table with PDF filename
-$update = $conn->prepare("UPDATE admin_clearance SET Clearance_PDF=? WHERE Enrollnment=?");
+/* =========================================================
+   6. UPDATE DATABASE WITH PDF NAME
+========================================================= */
+$update = $conn->prepare(
+    "UPDATE admin_clearance SET Clearance_PDF=? WHERE Enrollnment=?"
+);
 $update->bind_param("ss", $pdf_filename, $student_enrollment);
 $update->execute();
 $update->close();
 
-// ✅ Show message with link
-echo "
-    <div style='text-align:center; font-family:Poppins; margin-top:50px;'>
-        <h3 style='color:green;'>🎉 Clearance Certificate Generated Successfully!</h3>
-        <p>You can <a href='$pdf_path' target='_blank' style='color:#007bff; text-decoration:none;'>download your clearance certificate here</a>.</p>
-        <a href='student_dashboard.php' style='background:#300559; color:white; padding:10px 20px; border-radius:8px; text-decoration:none;'>Go Back to Dashboard</a>
-    </div>
-";
+/* =========================================================
+   7. OTP VERIFICATION REDIRECT
+========================================================= */
+$_SESSION['pdf_path'] = $pdf_path;
+$_SESSION['pdf_file'] = $pdf_filename;
+
+header("Location: verify_clearance_otp.php");
+exit();
 ?>

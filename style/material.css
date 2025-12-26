@@ -1,0 +1,178 @@
+/* ===============================
+   RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===============================
+   PAGE BACKGROUND
+================================ */
+body.container {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            rgba(249, 218, 136, 0.6),
+            rgba(55, 18, 18, 0.6)
+        ),
+        url("https://media.istockphoto.com/photos/diverse-international-students-celebrating-graduation-picture-id488520507?k=6&m=488520507&s=612x612&w=0&h=9kJKT6sOx5LQuEDi0R4cjG5w4sx3rrrXMImm6u6BhjI=");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* ===============================
+   FORM CONTAINER
+================================ */
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    width: 100%;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ===============================
+   HEADING
+================================ */
+.form-container h2 {
+    text-align: center;
+    color: #300559;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   LABELS & INPUTS
+================================ */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #300559;
+}
+
+/* ===============================
+   CHECKBOX GROUPS
+================================ */
+h4 {
+    margin: 12px 0 8px;
+    color: #444;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+}
+
+form label input[type="checkbox"] + span {
+    margin-left: 4px;
+}
+
+/* ===============================
+   MESSAGE
+================================ */
+.message {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: #eaf7ea;
+    color: #1b5e20;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#register {
+    padding: 12px 25px;
+    background: #300559;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#register:hover {
+    background: #4b0c8a;
+}
+
+.btn-back {
+    text-decoration: none;
+    padding: 12px 22px;
+    background: #555;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: #333;
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 25px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #register,
+    .btn-back {
+        width: 100%;
+        text-align: center;
+    }
+}

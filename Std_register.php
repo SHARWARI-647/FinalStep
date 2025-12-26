@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+include 'stdhead.php';
 
 if (isset($_POST['register'])) {
     $en = mysqli_real_escape_string($conn, $_POST['en']);
@@ -80,6 +81,7 @@ if (isset($_POST['register'])) {
       </div>
 
       <button type="submit" name="register" id="register">Register</button>
+      <p>Don't have an account? <a href="std_login.php">Login here</a></p>
     </form>
   </div>
 </body>

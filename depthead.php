@@ -1,27 +1,29 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Department Panel</title>
-    <link rel="stylesheet" href="style\Head.css">
+    <title>Student Clearance System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/Head.css">
 </head>
-<body class="container">
+
+<body><header>
+  <div>
     <h1>Student Clearance System</h1>
-    <h3>Department</h3>
-     <hr id="line">
+    <span>Department Portal</span>
+  </div>
 
-    <table id="tabs" cellspacing="10" cellpadding="5">
-        <tr>
-            <td id="data"><a href="mainPage.php">Home</a></td>
-            <td id="data"><a href="dept_dashboard.php">Department</a></td>
-            <td id="data"><a href="dept_material.php">➕Add Material</a></td>
-            <td id="data"><a href="dept_profile.php">👤View Profile</a></td>
-            <td id="data"><a href="dept_logout.php">🚪Logout</a></td>
-        </tr>
-    </table>
+  <nav>
+    <ul>
+      <li><a href="login_mainPage.php">🏠 Home</a></li>
+      <li><a href="dept_dashboard.php">Department</a></li>
+      <li><a href="dept_material.php">➕Add Material</a></li>
+      <li><a href="dept_profile.php">👤View Profile</a></li>
+      <li><a  href="logout.php">🚪Logout</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <hr id="line">
 </body>
 </html>
+

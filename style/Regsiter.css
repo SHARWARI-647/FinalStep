@@ -10,8 +10,13 @@
 
         body {
             min-height: 100vh;
-            background-image: url('https://wallpapers.com/images/hd/light-color-background-u5ajon1xr9puabyq.jpg');
-            background-size: cover;
+             background:
+        linear-gradient(
+            rgba(249, 218, 136, 0.6),
+            rgba(55, 18, 18, 0.6)
+        ),
+        url("https://media.istockphoto.com/photos/diverse-international-students-celebrating-graduation-picture-id488520507?k=6&m=488520507&s=612x612&w=0&h=9kJKT6sOx5LQuEDi0R4cjG5w4sx3rrrXMImm6u6BhjI=");
+    background-size: cover;
             background-position: center;
             display: flex;
             justify-content: center;
@@ -23,8 +28,9 @@
            Registration Form Container
         ================================= */
         .register_form {
+            margin-top:70px;
             background: rgba(255, 255, 255, 0.85);
-            padding: 40px 35px;
+            padding: 30px 30px;
             border-radius: 20px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             max-width: 400px;
@@ -51,7 +57,6 @@
         .register_form textarea {
             width: 100%;
             padding: 12px 15px;
-            margin: 10px 0;
             border-radius: 12px;
             border: 1px solid #ccc;
             outline: none;

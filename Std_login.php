@@ -53,7 +53,7 @@ if (isset($_POST['login'])) {
         <form method="post" autocomplete="off">
             <input type="text" name="en" placeholder="Enrollment Number" required>
             <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" name="login" value="Login" id="login">
+            <Button type="submit" name="login" value="Login" id="login">Login</Button>
              <p>Don't have an account? <a href="std_register.php">Register here</a></p>
         </form>
     </div>

@@ -1,26 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel - Student Clearance System</title>
-    <link rel="stylesheet" href="style\Head.css"> <!-- Common style for all dashboards -->
+    <title>Student Clearance System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style\Head.css">
 </head>
-<body class="container">
 
+<body><header>
+  <div>
     <h1>Student Clearance System</h1>
-    <h3>Admin</h3>
-    <hr id="line">
+    <span>Admin Portal</span>
+  </div>
 
-    <table id="tabs" cellspacing="10" cellpadding="5">
-        <tr>
-            <td id="data"><a href="mainPage.php">🏠 Home</a></td>
-            <td id="data"><a href="admin_dashboard.php">📊 Admin Dashboard</a></td>
-            <td id="data"><a href="admin_detail.php">👤 View Profile</a></td>
-            <td id="data"><a href="admin_logout.php">🚪 Logout</a></td>
-        </tr>
-    </table>
-
-    <hr id="line">
+  <nav>
+    <ul>
+      <li><a href="mainpage.php">🏠 Home</a></li>
+      <li><a href="admin_dashboard.php">📊 Admin Dashboard</a></li>
+      <li><a href="admin_detail.php">👤 View Profile</a></li>
+      <li><a href="logout.php">🚪 Logout</a></li>
+    </ul>
+  </nav>
+</header>
 
 </body>
 </html>

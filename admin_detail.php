@@ -65,7 +65,6 @@ if ($result->num_rows > 0) {
 
     <div class="text-center">
       <a href="admin_dashboard.php" class="btn btn-primary mt-3">⬅ Back to Dashboard</a>
-      <a href="admin_logout.php" class="btn-logout">Logout</a>
     </div>
   </div>
 </div>

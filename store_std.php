@@ -71,8 +71,7 @@ if (isset($_POST['update_status_row'])) {
 <head>
     <meta charset="UTF-8">
     <title>Student Store Clearance</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="std.css" rel="stylesheet">
+     <link href="style\clearance.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 <div class="container mt-5">

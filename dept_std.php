@@ -59,7 +59,7 @@ if (isset($_POST['accept_clearance'])) {
 <head>
     <meta charset="UTF-8">
     <title>Department Clearance - Student Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style\clearance.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 
@@ -98,7 +98,7 @@ if (isset($_POST['accept_clearance'])) {
                         };
                     ?>
                     <tr>
-                        <td><?= $row['Id'] ?></td>
+                        <td><?= $row['ID'] ?></td>
                         <td><?= htmlspecialchars($row['Material_Lent']) ?></td>
                         <td><?= htmlspecialchars($row['Material_Returned']) ?></td>
                         <td>₹<?= htmlspecialchars($row['Fine_Amount']) ?></td>
@@ -114,7 +114,7 @@ if (isset($_POST['accept_clearance'])) {
                         <td>
                             <?php if (!empty(trim($row['Material_Lent']))): ?>
                                 <form method="post" class="d-inline">
-                                    <input type="hidden" name="Id" value="<?= $row['Id'] ?>">
+                                    <input type="hidden" name="Id" value="<?= $row['ID'] ?>">
                                     <input type="hidden" name="en" value="<?= htmlspecialchars($en) ?>">
                                     <button type="submit" name="update_status_row" value="Approved" class="btn btn-success btn-sm mb-1">✅ Approve</button>
                                     <button type="submit" name="update_status_row" value="Rejected" class="btn btn-danger btn-sm">❌ Reject</button>

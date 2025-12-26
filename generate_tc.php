@@ -1,7 +1,7 @@
 <?php
+session_start();
 require('fpdf186/fpdf.php');
 include 'db.php';
-session_start();
 
 // ✅ Ensure student is logged in
 if (!isset($_SESSION['enrollment'])) {
@@ -28,6 +28,13 @@ if (!$student) exit();
 function getValue($array, $key) {
     return isset($array[$key]) && !empty($array[$key]) ? $array[$key] : 'N/A';
 }
+$uploadDir = "uploads/tc_pdfs/";
+if (!file_exists($uploadDir)) {
+    mkdir($uploadDir, 0777, true);
+}
+
+$pdf_filename = "TC_" . $en . ".pdf";
+$pdf_path = $uploadDir . $pdf_filename;
 
 // --- Generate PDF ---
 $pdf = new FPDF();
@@ -164,7 +171,18 @@ $pdf->Cell(50, 10, $pdf->Cell(190,0, "Government Polytechnic, Yavatmal", 0, 1,'R
 
 
 // ✅ Output PDF
-$pdf->Output();
+$pdf->Output('F', $pdf_path);
+
+/* =========================================================
+   7. STORE PDF INFO IN SESSION
+========================================================= */
+$_SESSION['pdf_path'] = $pdf_path;
+$_SESSION['pdf_file'] = $pdf_filename;
+
+/* =========================================================
+   8. REDIRECT TO OTP PAGE
+========================================================= */
+header("Location: verify_TC_otp.php");
 exit();
 ?>
 

@@ -28,31 +28,13 @@ This prevents fake accounts and ensures valid user access.
 ---
 
 ## 👥 User Roles
-
-### 👨‍🎓 Student
-- Register with OTP email verification
-- Login securely
-- Apply for clearance
-- Track clearance status
-- Download Clearance Certificate / TC (PDF)
-
-### 👨‍💼 Admin
-- Monitor entire system
-- View all students
-- Final clearance approval
-- Generate certificates
-
-### 🏫 Department
-- Verify departmental clearance
-- Approve or reject requests
-
-### 📚 Library
-- Check library dues
-- Approve clearance
-
-### 🏪 Store
-- Verify equipment returns
-- Approve clearance
+| Role              | Responsibilities                                                                                                                                                                         |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 👨‍🎓 **Student** | • Register with **OTP email verification**<br>• Login securely<br>• Apply for clearance<br>• Track clearance status<br>• Download **Clearance Certificate / Transfer Certificate (PDF)** |
+| 👨‍💼 **Admin**   | • Monitor entire system<br>• View all students<br>• Provide **final clearance approval**<br>• Generate **Transfer Certificates**                                                         |
+| 🏫 **Department** | • Verify departmental clearance<br>• Check departmental dues<br>• Approve or reject clearance requests                                                                                   |
+| 📚 **Library**    | • Check library dues<br>• Approve library clearance                                                                                                                                      |
+| 🏪 **Store**      | • Verify equipment returns<br>• Check store dues<br>• Approve clearance                                                                                                                  |
 
 ---
 
@@ -71,23 +53,15 @@ This prevents fake accounts and ensures valid user access.
 
 ## 🛠️ Technologies Used
 
-### Frontend
-- HTML
-- CSS
-- JavaScript
-
-### Backend
-- PHP
-
-### Database
-- MySQL
-
-### Tools & Libraries
-- XAMPP (Apache & MySQL)
-- PHPMailer (OTP Email)
-- FPDF (PDF Generation)
-- Git & GitHub (Version Control)
-- VS Code
+| Category            | Technologies                                 |
+| ------------------- | -------------------------------------------- |
+| **Frontend**        | HTML, CSS, JavaScript                        |
+| **Backend**         | PHP                                          |
+| **Database**        | MySQL                                        |
+| **Server**          | XAMPP (Apache & MySQL)                       |
+| **Libraries**       | PHPMailer (OTP Email), FPDF (PDF Generation) |
+| **Version Control** | Git & GitHub                                 |
+| **Code Editor**     | Visual Studio Code (VS Code)                 |
 
 ---
 
@@ -159,7 +133,7 @@ FinalStep/
 
 ## 👩‍💻 Developed By
 
-**Sharwari Rahandale**
+**Sharwari Rahangdale**
 Student | Web Developer
 
 ---
